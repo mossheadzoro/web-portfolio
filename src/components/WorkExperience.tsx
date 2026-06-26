@@ -69,7 +69,7 @@ export default function WorkExperience() {
   );
 }
 
-function TimelineItem({ experience, index, total }: { experience: typeof EXPERIENCES[0], index: number, total: number }) {
+function TimelineItem({ experience, index }: { experience: typeof EXPERIENCES[0], index: number, total: number }) {
   const itemRef = useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll({

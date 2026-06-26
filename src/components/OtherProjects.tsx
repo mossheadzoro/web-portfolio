@@ -33,7 +33,7 @@ export default function OtherProjects() {
   }, []);
 
   // Frame-by-frame auto-scroll
-  useAnimationFrame((t, delta) => {
+  useAnimationFrame((_t, delta) => {
     // Only auto-scroll if it's in view, not hovered, not dragged, and we have measured the width
     if (!isInView || isHovered || isDragging || halfWidth === 0) return;
 

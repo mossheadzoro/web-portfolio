@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
 import type { MouseEvent } from 'react';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Code2 } from 'lucide-react';
 import { FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
 import SkillSection from './components/SkillSection';
@@ -53,6 +53,13 @@ function App() {
   const heroFilter  = useTransform(heroBlur, (v) => `blur(${v}px)`);
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     // outer wrapper — needs to be tall enough to scroll through

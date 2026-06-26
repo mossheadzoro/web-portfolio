@@ -436,9 +436,6 @@ export default function NextSection() {
         }}
       >
         {CARDS.map((card, i) => {
-          const t = i / (CARDS.length - 1);
-          const layout = cardLayout(t);
-
           return (
             <div
               key={card.id}
