@@ -298,16 +298,11 @@ export default function NextSection() {
   }, [animate, applyTransforms]);
 
   return (
-    <section ref={wrapperRef} style={{ minHeight: '1000vh', position: 'relative', background: '#0e0e0e' }}>
+    <section ref={wrapperRef} className="relative bg-[#0e0e0e] min-h-screen md:min-h-[1000vh]">
       <motion.div
         ref={containerRef}
+        className="w-full h-full md:h-screen md:sticky top-0 overflow-hidden select-none"
         style={{
-          width: '100vw',
-          height: '100vh',
-          position: 'sticky',
-          top: 0,
-          overflow: 'hidden',
-          userSelect: 'none',
           scale: sectionScale,
           opacity: sectionOpacity,
           filter: sectionFilter,
@@ -338,19 +333,9 @@ export default function NextSection() {
         }}
       />
 
-      {/* Flower Background Video Container */}
+      {/* Flower Background Video Container (Desktop Only) */}
       <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          right: '2vw',
-          width: '30vw', // Increased by 20%
-          maxWidth: '420px', // Increased by 20%
-          height: '70vh', // Scaled up
-          zIndex: 5, // Under text but among cards
-          pointerEvents: 'none',
-          overflow: 'hidden', // Ensure video doesn't spill
-        }}
+        className="hidden md:block absolute bottom-0 right-[2vw] w-[30vw] max-w-[420px] h-[70vh] z-[5] pointer-events-none overflow-hidden"
       >
         <video
           ref={flowerVideoRef}
@@ -367,16 +352,8 @@ export default function NextSection() {
         />
       </div>
 
-      {/* Title */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '8vh',
-          left: '4vw',
-          zIndex: 100,
-          pointerEvents: 'none',
-        }}
-      >
+      {/* Desktop Title & Scroll Hint */}
+      <div className="hidden md:block absolute top-[8vh] left-[4vw] z-[100] pointer-events-none">
         <h1
           style={{
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
@@ -404,37 +381,13 @@ export default function NextSection() {
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '4vh',
-          right: '4vw',
-          zIndex: 100,
-          fontFamily: "'Inter', sans-serif",
-          fontSize: '0.7rem',
-          fontWeight: 500,
-          color: 'rgba(255,255,255,0.35)',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-          pointerEvents: 'none',
-        }}
-      >
+      {/* Scroll hint (Desktop Only) */}
+      <div className="hidden md:block absolute bottom-[4vh] right-[4vw] z-[100] font-sans text-[0.7rem] font-medium text-white/35 tracking-[0.15em] uppercase pointer-events-none">
         SCROLL TO SURF
       </div>
 
-      {/* 3D Card Container */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          perspective: '1200px',
-          perspectiveOrigin: '30% 70%',
-        }}
-      >
+      {/* 3D Card Container (Desktop Only) */}
+      <div className="hidden md:block absolute top-0 left-0 w-full h-full perspective-[1200px]" style={{ perspectiveOrigin: '30% 70%' }}>
         {CARDS.map((card, i) => {
           return (
             <div
@@ -503,6 +456,38 @@ export default function NextSection() {
             </div>
           );
         })}
+      </div>
+
+      {/* Mobile Fallback View */}
+      <div className="md:hidden relative z-10 px-6 py-24 flex flex-col items-center min-h-screen">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-2 font-sans">
+            MY TECHSTACK
+          </h1>
+          <div className="text-white/50 text-sm tracking-widest uppercase font-sans">
+            Stack Collection <span className="text-[10px] align-super">({CARDS.length})</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-md">
+          {CARDS.map((card, i) => (
+            <div 
+              key={card.id}
+              className="bg-[#161b22] border border-white/5 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-lg relative overflow-hidden group"
+            >
+              <div className="absolute top-2 left-2 text-[10px] text-white/30 font-mono font-bold">
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              <img 
+                src={card.icon} 
+                alt={card.label} 
+                className="w-12 h-12 object-contain mb-4 group-hover:scale-110 transition-transform duration-300" 
+              />
+              <h3 className="text-white font-semibold text-sm mb-1">{card.label}</h3>
+              <p className="text-white/50 text-[10px] leading-tight">{card.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
       </motion.div>
     </section>

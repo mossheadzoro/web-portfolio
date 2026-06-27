@@ -87,8 +87,8 @@ function App() {
             }}
           >
             {/* Background ambient glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-[50vw] bg-neonGreen/30 blur-[150px] rounded-full pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[25vw] h-[25vw] bg-neonGreen/60 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[50vw] md:h-[50vw] bg-neonGreen/15 md:bg-neonGreen/30 blur-[100px] md:blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[25vw] md:h-[25vw] bg-neonGreen/30 md:bg-neonGreen/60 blur-[70px] md:blur-[100px] rounded-full pointer-events-none" />
           </motion.div>
 
           {/* Nav — fades out too */}
@@ -173,7 +173,7 @@ function App() {
                   <img
                     src="/profile.png"
                     alt="Profile"
-                    className="w-full h-full object-contain object-bottom scale-[1.35] md:scale-90 origin-bottom "
+                    className="w-full h-full object-contain object-bottom scale-[1.6] sm:scale-[1.4] md:scale-90 origin-bottom "
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop';
                     }}
@@ -210,7 +210,7 @@ function App() {
       <ContactSection />
 
       {/* ── Fixed Social Icons ── */}
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-50">
+      <div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-6 z-50">
         <a href="https://www.linkedin.com/in/ankan-das-240082328/" className="text-white/30 hover:text-neonGreen transition-colors duration-300">
           <FiLinkedin className="w-5 h-5" />
         </a>

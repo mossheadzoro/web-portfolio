@@ -108,12 +108,10 @@ function TimelineItem({ experience, index }: { experience: typeof EXPERIENCES[0]
       </div>
 
       {/* Right side (content on small screens, alternating on desktop) */}
-      <div className={`w-full pl-8 md:pl-0 md:w-5/12 ${isEven ? 'text-left' : 'text-left'}`}>
-        {!isEven || typeof window !== 'undefined' && window.innerWidth < 768 ? (
-          <motion.div style={{ opacity, y }} className={!isEven ? 'md:pl-8' : ''}>
-            <ExperienceContent experience={experience} />
-          </motion.div>
-        ) : null}
+      <div className={`w-full pl-8 md:pl-0 md:w-5/12 ${isEven ? 'block md:hidden' : 'block text-left'}`}>
+        <motion.div style={{ opacity, y }} className={!isEven ? 'md:pl-8' : ''}>
+          <ExperienceContent experience={experience} />
+        </motion.div>
       </div>
     </div>
   );

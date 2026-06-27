@@ -33,7 +33,7 @@ export default function SkillSection() {
   return (
     <section ref={wrapperRef} style={{ minHeight: '300vh', position: 'relative' }}>
       <motion.div
-        className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center py-32 px-8 text-white"
+        className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center py-12 md:py-32 px-4 md:px-8 text-white"
         style={{
           backgroundImage: `url(${wpBg})`,
           backgroundSize: 'cover',
@@ -93,21 +93,21 @@ export default function SkillSection() {
           }
         }}
       >
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-24">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-4 lg:gap-12 mb-8 lg:mb-24">
           <h2 
-            className="text-[8vw] md:text-[4.5vw] font-bold leading-none tracking-tighter lg:w-1/2"
+            className="text-[12vw] sm:text-[8vw] md:text-[4.5vw] font-bold leading-none tracking-tighter lg:w-1/2"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             EXPERTISE <br className="hidden lg:block" /><span className="text-gray-500 italic font-light">&</span> SKILLS
           </h2>
           
-          <div className="lg:w-5/12 flex flex-col gap-8">
-            <p className="text-base md:text-lg text-gray-300 font-light leading-relaxed border-l-2 border-emerald-500 pl-6 italic">
+          <div className="lg:w-5/12 flex flex-col gap-4 lg:gap-8">
+            <p className="text-xs md:text-lg text-gray-300 font-light leading-relaxed border-l-2 border-emerald-500 pl-4 md:pl-6 italic">
               "I thrive on solving real-world problems, turning ideas into clean, maintainable code, and learning through experimentation. You'll find me building side projects, diving into new tech stacks, or simply exploring what's next in the world of web development."
             </p>
             <div>
               <button 
-                className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+                className="px-6 py-2 md:px-8 md:py-3 text-sm md:text-base bg-white text-black font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
               >
                 My Resume
               </button>
@@ -115,17 +115,17 @@ export default function SkillSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full">
           {SKILLS.map((skillGroup, idx) => (
             <div key={idx} className="flex flex-col">
-              <h3 className="text-xl md:text-2xl font-semibold mb-6 pb-4 border-b border-white/10 text-gray-300">
+              <h3 className="text-sm md:text-2xl font-semibold mb-3 md:mb-6 pb-2 md:pb-4 border-b border-white/10 text-gray-300">
                 {skillGroup.category}
               </h3>
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-2 md:gap-4">
                 {skillGroup.items.map((item, itemIdx) => (
                   <li 
                     key={itemIdx}
-                    className="text-lg md:text-xl text-gray-400 hover:text-white transition-colors duration-300 cursor-default"
+                    className="text-xs md:text-xl text-gray-400 hover:text-white transition-colors duration-300 cursor-default"
                   >
                     {item}
                   </li>

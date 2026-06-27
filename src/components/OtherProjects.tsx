@@ -38,27 +38,23 @@ export default function OtherProjects() {
     if (!isInView || isHovered || isDragging || halfWidth === 0) return;
 
     let moveBy = 0.05 * delta; // Speed of the auto-scroll
-    let currentX = x.get();
-    
-    currentX -= moveBy;
-    
-    // Infinite loop wrap left
-    if (currentX <= -halfWidth) {
-      currentX += halfWidth;
-    }
-    
-    x.set(currentX);
+    x.set(x.get() - moveBy);
   });
 
-  // Handle manual dragging infinite wrap
-  const handleDrag = () => {
-    let currentX = x.get();
-    if (currentX <= -halfWidth) {
-      x.set(currentX + halfWidth);
-    } else if (currentX > 0) {
-      x.set(currentX - halfWidth);
-    }
-  };
+  // Handle infinite wrap for drag, momentum, and auto-scroll
+  useEffect(() => {
+    const unsubscribe = x.on("change", (latest) => {
+      if (halfWidth === 0) return;
+      
+      if (latest <= -halfWidth) {
+        x.set(latest % halfWidth);
+      } else if (latest > 0) {
+        x.set((latest % halfWidth) - halfWidth);
+      }
+    });
+    
+    return () => unsubscribe();
+  }, [x, halfWidth]);
 
   return (
     <div ref={containerRef} className="bg-[#0a0a0a] text-white py-32 overflow-hidden relative min-h-screen flex flex-col justify-center">
@@ -80,7 +76,6 @@ export default function OtherProjects() {
           dragConstraints={{ left: -10000, right: 10000 }} // Allow massive drag distances
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
-          onDrag={handleDrag}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

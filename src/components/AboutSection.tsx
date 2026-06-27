@@ -63,7 +63,7 @@ export default function AboutSection() {
         {/* Main Quote Text */}
         <div className="max-w-[1200px] w-full mx-auto px-6 md:px-12 relative z-30 flex items-center justify-center">
           <motion.h2
-            className="text-lg md:text-xl lg:text-3xl leading-tight text-center font-sans font-thin tracking-[0.2em] text-white/90 whitespace-nowrap"
+            className="text-lg md:text-xl lg:text-3xl leading-tight text-center font-sans font-thin tracking-[0.2em] text-white/90"
             style={{ opacity: textOpacity, scale: textScale }}
           >
             {QUOTE}

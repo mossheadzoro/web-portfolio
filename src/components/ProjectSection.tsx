@@ -33,7 +33,7 @@ export default function ProjectSection() {
       {/* Background fixed heading */}
       <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center pointer-events-none z-0 overflow-hidden">
         <h2 
-          className="text-[12vw] font-bold text-white/10 mb-9 tracking-tighter uppercase whitespace-nowrap leading-none"
+          className="text-[18vw] md:text-[12vw] font-bold text-white/10 mb-9 tracking-tighter uppercase leading-none text-center px-4"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
           Top 3 Projects
@@ -84,11 +84,11 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0], index: n
     <section ref={cardRef} className="min-h-screen w-full flex items-center justify-center p-4 lg:p-8">
       <motion.div 
         style={{ y, opacity, scale }}
-        className="w-full h-[85vh] max-w-[1400px] flex flex-col lg:flex-row items-center"
+        className="w-full min-h-[85vh] lg:h-[85vh] max-w-[1400px] flex flex-col lg:flex-row items-center"
       >
         {/* Project Information Side */}
         <motion.div 
-          className="flex-1 p-8 lg:p-16 flex flex-col justify-center space-y-6"
+          className="w-full lg:w-1/2 lg:flex-1 p-8 lg:p-16 flex flex-col justify-center space-y-6 z-10"
           style={{ opacity: textOpacity, y: textY }}
         >
            <div className="space-y-2">
@@ -120,7 +120,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0], index: n
         </motion.div>
 
         {/* 3D Model / Video Side */}
-        <div className="flex-1 w-full h-full relative flex items-center justify-center overflow-hidden mix-blend-screen">
+        <div className="w-full h-[40vh] lg:h-full lg:w-1/2 lg:flex-1 relative flex items-center justify-center overflow-hidden mix-blend-screen z-0">
            {index === 1 ? (
              <MouseTrackingOrb />
            ) : index === 2 ? (
