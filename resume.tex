@@ -1,0 +1,145 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Ankan Das} \\ \vspace{2pt}
+    \small Kolkata, India $|$ +91 7890514406 $|$ \href{mailto:dasankan210@gmail.com}{\underline{dasankan210@gmail.com}} \\ \vspace{1pt}
+    \href{https://github.com/mossheadzoro}{\underline{GitHub}} $|$ 
+    \href{https://linkedin.com/in/ankan-das-240082328/}{\underline{LinkedIn}} $|$ 
+    \href{https://ankan-portfolio-delta.vercel.app/}{\underline{Portfolio}} $|$ 
+    \href{https://3-d-portfolio-seven-delta.vercel.app/}{\underline{3D Portfolio}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Techno India University}{Kolkata, India}
+      {B.Tech in Computer Science \& Engineering}{2023 -- Present}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Moual (Stealth Startup)}{2026 -- Present}
+      {Founder \& Lead Engineer}{}
+      \resumeItemListStart
+        \resumeItem{Architecting India's first AI-powered cloud ERP platform tailored for the modern jewelry retail industry.}
+        \resumeItem{Engineering a high-performance, multi-tenant system to handle complex inventory workflows, automated billing, and multi-branch synchronization.}
+        \resumeItem{Designing and prototyping an IoT-enabled RFID tracking system module to automate physical stock audits.}
+        \resumeItem{Developing the scalable backend architecture using Node.js and PostgreSQL to ensure data integrity across parallel transactions.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Neurathon 2026}{Feb 2026}
+      {Frontend and Integration Developer (Finalist)}{}
+      \resumeItemListStart
+        \resumeItem{Built and deployed a working MVP of 'Event-Swarm', a multi-agent AI orchestration platform, during a 48-hour continuous hackathon.}
+        \resumeItem{Designed a platform bridging the gap between simple chatbot interfaces and complex enterprise automation.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Civic Fix (Smart India Hackathon Project)} $|$ \emph{React Native, Node.js, MongoDB, AI Orchestration}}{}
+          \resumeItemListStart
+            \resumeItem{Developed an MVP for the Smart India Hackathon (SIH), securing a spot as a campus finalist for solving real-world municipal challenges.}
+            \resumeItem{Built a location-aware mobile app featuring Role-Based Access Control (RBAC) with unique dashboards for Citizens, Workers, and Municipal Heads.}
+            \resumeItem{Implemented dynamic geo-fencing that auto-updates local civic issues in real-time when a user changes their city location.}
+            \resumeItem{Engineered an AI dispatch engine that parses complaint details to automatically route tasks to available field workers and track resource usage.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{3D-Portfolio} $|$ \emph{Three.js, React Three Fiber, Blender, Framer Motion}}{}
+          \resumeItemListStart
+            \resumeItem{Built an immersive, gamified "One Piece" 3D world using React Three Fiber and Three.js.}
+            \resumeItem{Modeled custom low-poly assets in Blender with baked textures, utilizing GLTF compression for optimal web performance.}
+            \resumeItem{Implemented complex scroll animations, raycast interactions, and physics via Framer Motion.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Hire Junc (Smart India Hackathon Project)} $|$ \emph{Node.js, Express, React, PostgreSQL}}{}
+          \resumeItemListStart
+            \resumeItem{Built a freelance application supporting a real-time escrow system to ensure secure transactions.}
+            \resumeItem{Integrated an algorithm-based work-suggestion engine to assist new freelancers in finding relevant opportunities.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Eco-Home (UN SDG 7 Alignment Project)} $|$ \emph{Python, React, MongoDB, AI Integration}}{}
+          \resumeItemListStart
+            \resumeItem{Developed an AI-based energy-saving system for homes and apartments.}
+            \resumeItem{Created features to track electricity bills and appliances, actively recommending opportunities to reduce carbon footprints and save money.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: JavaScript, TypeScript, Python, HTML/CSS} \\
+     \textbf{Frontend}{: React, Next.js, Redux, Tailwind CSS, Three.js, Vite.js, Framer Motion} \\
+     \textbf{Backend \& Databases}{: Node.js, Express, PostgreSQL, MongoDB, GraphQL, Redis} \\
+     \textbf{DevOps \& Cloud}{: Docker, Kubernetes, AWS, Jenkins, Git, NGINX} \\
+     \textbf{Design \& 3D}{: Figma, Blender, Prototyping, Wireframing}
+    }}
+ \end{itemize}
+
+\end{document}

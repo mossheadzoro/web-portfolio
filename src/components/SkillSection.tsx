@@ -106,11 +106,13 @@ export default function SkillSection() {
               "I thrive on solving real-world problems, turning ideas into clean, maintainable code, and learning through experimentation. You'll find me building side projects, diving into new tech stacks, or simply exploring what's next in the world of web development."
             </p>
             <div>
-              <button 
-                className="px-6 py-2 md:px-8 md:py-3 text-sm md:text-base bg-white text-black font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+              <a 
+                href="/resume.pdf"
+                download="Ankan_Das_Resume.pdf"
+                className="inline-block px-6 py-2 md:px-8 md:py-3 text-sm md:text-base bg-white text-black font-semibold rounded-full hover:bg-emerald-500 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]"
               >
                 My Resume
-              </button>
+              </a>
             </div>
           </div>
         </div>

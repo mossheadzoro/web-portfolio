@@ -15,10 +15,10 @@ const EXPERIENCES = [
     description: "Built and Deployed a working MVP of 'Event-Swarm' a event management platform, in 48 Hours non-stop coding",
   },
   {
-    company: "Moual",
-    role: "CEO and Lead Developer",
-    period: "2026 - present",
-    description: "Leading the Development of a revolutionary India's First AI-powered Modern Jwellery ERP  Platform",
+    company: "Moual (Stealth Startup)",
+    role: "Founder & Lead Engineer",
+    period: "2026 - Present",
+    description: "Architecting India's first AI-powered cloud ERP platform tailored for the modern jewelry retail industry, utilizing Node.js and PostgreSQL for high-performance, multi-tenant inventory workflows.",
   }
 ];
 
